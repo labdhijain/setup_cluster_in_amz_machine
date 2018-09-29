@@ -1,0 +1,16 @@
+####  how to set up cluster in amazon aws machines..
+	1.=> Lunch instances rhel7.5 in amazon aws (1 datanode with 2 GB ram and 20 GB hdd, 2 namenode with 1GB ram and 20GB hdd, {allocate elastice ip in all machines})
+	2.=>chmod 400 security_key  (key downloaded from aws)
+	3.=>ssh -i secutity_key_path ec2-user@ip   (  ssh all machine in your terminal )
+	4.=>sudo -i (for root account switch)
+	5.=>set repo path with online link  [okk]
+					     baseurl=http://mirror.centos.org/centos/7.5.1804/os/x86_64/
+					     gpgcheck=0
+	6.=>yum install wget (wget for download file from internet )
+	7.=>wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.3/hadoop-2.7.3.tar.gz (link for hadoop2 tar file and link for file where it exists https://archive.apache.org/dist/hadoop/core/hadoop-2.7.3/)
+
+	8.=>sudo yum install java-1.8.0-openjdk (for install java)
+	9.=>sudo yum install java-1.8.0-openjdk-devel (for java packages)
+	10.=> ls -R | grep "java" (to get java path when you dont be able to find)
+	11.=> follow all instruction from my repo "hadoop2-2-configuration-and-creating-cluster"
+
